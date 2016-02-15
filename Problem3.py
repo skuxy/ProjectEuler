@@ -6,9 +6,8 @@
 
 # Erastothenes's algorithm
 def is_prime(limit):
-    isPrime = {}
+    isPrime = {1: False}
 
-    isPrime[1] = False
     for i in range(2, limit + 1):
         isPrime[i] = True
 
@@ -17,7 +16,7 @@ def is_prime(limit):
         if isPrime[i]:
             for factor in range(2, limit + 1):
                 j = i * factor
-                if (j > limit): break
+                if j > limit: break
                 isPrime[j] = False
     return isPrime
 
@@ -44,6 +43,7 @@ def trial_division(n):
     if n > 1:
         prime_factors.append(n)
     return prime_factors
+
 
 if __name__ == "__main__":
     print(max(trial_division(600851475143)))

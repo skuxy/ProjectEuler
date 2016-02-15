@@ -7,7 +7,7 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 # I am aware that this function is already probably defined
-#Lucas method
+# Lucas method
 def get_nth_fibonacci(n):
     fi = (1 + 5 ** 0.5) / 2
     return round((fi ** n - (-fi) ** -n) / 5 ** 0.5, 0)
@@ -15,12 +15,12 @@ def get_nth_fibonacci(n):
 
 if __name__ == "__main__":
     i = 1
-    sum = 0
+    summa = 0
     fib = int(get_nth_fibonacci(i))
     while fib < 4000000:
         if fib % 2 is 0:
-            sum += fib
+            summa += fib
         i += 1
         fib = int(get_nth_fibonacci(i))
 
-    print(sum)
+    print(summa)

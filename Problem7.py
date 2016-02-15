@@ -13,7 +13,7 @@ def is_prime(a):
 if __name__ == "__main__":
     number = 3
     nth_prime = 1
-    while (True):
+    while True:
         if all(number % i for i in xrange(2, number)):
             nth_prime += 1
         if nth_prime == 10001:
