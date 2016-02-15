@@ -5,7 +5,7 @@
 # What is the largest prime factor of the number 600851475143 ?
 
 # Erastothenes's algorithm
-def prime_sieve(limit):
+def is_prime(limit):
     isPrime = {}
 
     isPrime[1] = False
@@ -19,7 +19,10 @@ def prime_sieve(limit):
                 j = i * factor
                 if (j > limit): break
                 isPrime[j] = False
+    return isPrime
 
+
+def list_of_primes(limit, isPrime):
     primes = []
     for i in range(1, limit + 1):
         if isPrime[i]:
@@ -33,7 +36,7 @@ def trial_division(n):
     if n < 2:
         return []
     prime_factors = []
-    for p in prime_sieve(int(n ** 0.5) + 1):
+    for p in list_of_primes(int(n ** 0.5) + 1, is_prime(int(n ** 0.5) + 1)):
         if p * p > n: break
         while n % p == 0:
             prime_factors.append(p)
