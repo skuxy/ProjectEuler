@@ -11,12 +11,12 @@ def is_prime(a):
 
 
 if __name__ == "__main__":
-    number = 2
+    number = 3
+    nth_prime = 1
     while (True):
-        nth_prime = 0
         if all(number % i for i in xrange(2, number)):
             nth_prime += 1
-        number += 1
         if nth_prime == 10001:
             break
+        number += 2
     print(number)
