@@ -3,5 +3,4 @@
 # Numbers are in Problem13input.txt file
 
 if __name__ == "__main__":
-    list_of_nums = list(map(int, open("Problem13input.txt").readlines()))
-    print(str(sum(list_of_nums))[0:10])
+    print(str(sum(list(map(int, open("Problem13input.txt").readlines()))))[0:10])
